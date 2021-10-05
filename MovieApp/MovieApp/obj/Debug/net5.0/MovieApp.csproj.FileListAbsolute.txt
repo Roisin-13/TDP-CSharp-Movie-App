@@ -1,0 +1,16 @@
+C:\Users\Admin\Desktop\TDP-CSharp-Monday-Week2\MovieApp\MovieApp\obj\Debug\net5.0\MovieApp.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\TDP-CSharp-Monday-Week2\MovieApp\MovieApp\obj\Debug\net5.0\MovieApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\TDP-CSharp-Monday-Week2\MovieApp\MovieApp\obj\Debug\net5.0\MovieApp.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\TDP-CSharp-Monday-Week2\MovieApp\MovieApp\obj\Debug\net5.0\MovieApp.AssemblyInfo.cs
+C:\Users\Admin\Desktop\TDP-CSharp-Monday-Week2\MovieApp\MovieApp\obj\Debug\net5.0\MovieApp.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\TDP-CSharp-Monday-Week2\MovieApp\MovieApp\bin\Debug\net5.0\MovieApp.exe
+C:\Users\Admin\Desktop\TDP-CSharp-Monday-Week2\MovieApp\MovieApp\bin\Debug\net5.0\MovieApp.deps.json
+C:\Users\Admin\Desktop\TDP-CSharp-Monday-Week2\MovieApp\MovieApp\bin\Debug\net5.0\MovieApp.runtimeconfig.json
+C:\Users\Admin\Desktop\TDP-CSharp-Monday-Week2\MovieApp\MovieApp\bin\Debug\net5.0\MovieApp.runtimeconfig.dev.json
+C:\Users\Admin\Desktop\TDP-CSharp-Monday-Week2\MovieApp\MovieApp\bin\Debug\net5.0\MovieApp.dll
+C:\Users\Admin\Desktop\TDP-CSharp-Monday-Week2\MovieApp\MovieApp\bin\Debug\net5.0\ref\MovieApp.dll
+C:\Users\Admin\Desktop\TDP-CSharp-Monday-Week2\MovieApp\MovieApp\bin\Debug\net5.0\MovieApp.pdb
+C:\Users\Admin\Desktop\TDP-CSharp-Monday-Week2\MovieApp\MovieApp\obj\Debug\net5.0\MovieApp.dll
+C:\Users\Admin\Desktop\TDP-CSharp-Monday-Week2\MovieApp\MovieApp\obj\Debug\net5.0\ref\MovieApp.dll
+C:\Users\Admin\Desktop\TDP-CSharp-Monday-Week2\MovieApp\MovieApp\obj\Debug\net5.0\MovieApp.pdb
+C:\Users\Admin\Desktop\TDP-CSharp-Monday-Week2\MovieApp\MovieApp\obj\Debug\net5.0\MovieApp.genruntimeconfig.cache
