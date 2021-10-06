@@ -8,20 +8,16 @@ namespace MovieApp
 {
     class MovieController
     {
-        private readonly IList<Movie> movies;
 
-        private static int counter = 0;
+        //private static int counter = 0;
 
-        public MovieController() => movies = new List<Movie>();
-
-        //public void AddMovie(Movie movie)
-        //{
-        //    movies.Add(movie);
-        //}
-
-
-
-
+        //------linking services with controller
+        private readonly Services services;
+        public MovieController(Services services)
+        {
+            this.services = services; 
+        }
+        //==============CREATE METHOD===============//
         public void CreateMovie()
         {
             Console.WriteLine("Please enter title of movie:");
@@ -35,47 +31,45 @@ namespace MovieApp
             var date = DateTime.ParseExact(dateInput, "d", null);
 
 
-            Movie newMovie = new Movie(title, star, genre, date);
-            newMovie.ID = counter;
-            counter++;
-
-            movies.Add(newMovie);
-
+            Movie toCreate = new Movie(title, star, genre, date);
+            Movie newMovie = services.CreateMovie(toCreate); 
             Console.WriteLine($"Created new movie {newMovie}");
 
         }
-
+        //==============READ METHOD===============//
         public void ReadMovie()
         {
+            IEnumerable<Movie> movies = services.ReadMovie();
             foreach (var item in movies)
             {
                 Console.WriteLine(item);
             }
         }
-
- //       foreach (var item in collection)
-	//{
-
-	//}
-
+        //==============DELETE METHOD===============//
         public void DeleteMovie()
         {
+            Console.WriteLine("Please enter ID of movie you want to delete:");
+            string inputID = Console.ReadLine();
+            var remID = int.TryParse(inputID, out int id);
+            if (remID)
+            {
+                services.DeleteMovie(id);
+            }
+            
+        }
+
+/*        public void DeleteMovie()
+        {
+
             Console.WriteLine("Please ID of movie you want to delete:");
             string inputID = Console.ReadLine();
             var remID = Int32.Parse(inputID);
-            movies.Remove(new Movie() {ID = remID });
-   
-
 
             //Movie newMovie = new Movie(title, star, genre, date);
             //newMovie.ID = counter;
             //counter++;
 
-            //movies.Add(newMovie);
-
-            //Console.WriteLine($"Created new movie {newMovie}");
-
-        }
+        }*/
 
 
 

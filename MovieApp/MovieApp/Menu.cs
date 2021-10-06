@@ -17,7 +17,7 @@ namespace MovieApp
         {
             CREATE,
             READ,
-            UPDATE,
+           // UPDATE,
             DELETE,
             QUIT
         }
@@ -45,15 +45,23 @@ namespace MovieApp
                     case CrudOptions.CREATE:
                         Console.WriteLine("Creating");
                         movieController.CreateMovie();
-                        //CrudMenu();
+                        Console.WriteLine();
+                        Console.WriteLine("Chose another option:");
+                        CrudMenu();
                         break;
                     case CrudOptions.READ:
                         Console.WriteLine("Reading");
                         movieController.ReadMovie();
+                        Console.WriteLine();
+                        Console.WriteLine("Chose another option:");
+                        CrudMenu();
                         break;
                     case CrudOptions.DELETE:
                         Console.WriteLine("Deleting");
                         movieController.DeleteMovie();
+                        Console.WriteLine();
+                        Console.WriteLine("Chose another option:");
+                        CrudMenu();
                         break;
                     case CrudOptions.QUIT:
                         inMenu = false;

@@ -8,6 +8,40 @@ namespace MovieApp
 {
     class Services
     {
-      //  private
+        //private IList<Movie> movies;
+        //private static int counter = 0;
+
+        //------linking repository with services
+        private readonly Repository repository;
+        public Services(Repository repository)
+        {
+            this.repository = repository;
+        }
+
+  /*      public Services()
+        {
+            movies = new List<Movie>();
+        }*/
+
+        internal Movie CreateMovie(Movie toCreate)
+        {
+            Movie newMovie = repository.CreateMovie(toCreate);
+            return newMovie;
+
+        }
+
+        internal IEnumerable<Movie> ReadMovie()
+        {
+            return repository.ReadMovie();
+        }
+
+
+        internal void DeleteMovie(int id)
+        {
+            repository.DeleteMovie(id);
+        }
+
+
+
     }
 }
