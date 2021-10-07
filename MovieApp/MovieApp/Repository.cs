@@ -5,6 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+/*PLEASE IGNORE MY OLD CODE - I LEFT IT IN, SO I COULD UNDERSTAND THE STEPS*/
+/* HERE IS A RABBIT TO HELP YOU IGNORE:
+ * {\__/}
+ * ( ^-^)
+ * />HI!
+  omg he likes you!*/
 
 namespace MovieApp
 {
@@ -26,8 +32,13 @@ namespace MovieApp
             connection.Open();
 
             MySqlCommand command = connection.CreateCommand();
-            command.CommandText = $"insert into movies(title), (star), (genre), (date_released) " +
-                $"values('{toCreate.Title}'), ('{toCreate.Star}'), ('{toCreate.Type}'), ('{toCreate.Date}')";
+            command.CommandText = "insert into movies(title, star, genre, date_released) " +
+                "values(@Title, @Star, @Type, @Date)";
+            command.Parameters.AddWithValue("@Title", toCreate.Title);
+            command.Parameters.AddWithValue("@Star", toCreate.Star);
+            command.Parameters.AddWithValue("@Type", toCreate.Type);
+            command.Parameters.AddWithValue("@Date", toCreate.Date);
+            command.Prepare();
             command.ExecuteNonQuery();
 
             connection.Close();
@@ -42,6 +53,8 @@ namespace MovieApp
             //return toCreate;
 
         }
+
+
 
         internal IEnumerable<Movie> ReadMovie()
         {
@@ -64,6 +77,22 @@ namespace MovieApp
             connection.Close();
             return movies;
             //return movies;
+        }
+
+        internal bool Exists(int id)
+        {
+            connection.Open();
+
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = "SELECT COUNT(*) FROM movies WHERE id=@id";
+            command.Parameters.AddWithValue("@id", id);
+            command.Prepare(); 
+            int result = Convert.ToInt32(command.ExecuteScalar());
+
+            connection.Close();
+
+            return result > 0;
+            //throw new NotImplementedException();
         }
 
         internal void DeleteMovie(int id)

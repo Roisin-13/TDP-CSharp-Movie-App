@@ -67,6 +67,8 @@ namespace MovieApp
                         inMenu = false;
                         break;
                 }
+                Console.WriteLine("Please press any key to continue");
+                Console.ReadKey();
             }
         }
 

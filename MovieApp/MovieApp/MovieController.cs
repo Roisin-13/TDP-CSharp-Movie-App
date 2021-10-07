@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MovieApp.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,7 +54,15 @@ namespace MovieApp
             var remID = int.TryParse(inputID, out int id);
             if (remID)
             {
-                services.DeleteMovie(id);
+                try
+                {
+                    services.DeleteMovie(id);
+                }
+                catch (ItemNotFoundException)
+                {
+                    Console.WriteLine($"item with id: {id} does not exist");
+                }
+                
             }
             
         }

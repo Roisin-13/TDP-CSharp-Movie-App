@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MovieApp.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,6 +39,10 @@ namespace MovieApp
 
         internal void DeleteMovie(int id)
         {
+            if (!repository.Exists(id))
+            {
+                throw new ItemNotFoundException();
+            }
             repository.DeleteMovie(id);
         }
 
